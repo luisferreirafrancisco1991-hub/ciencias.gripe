@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sintomas da Gripe</title>
+  <style>
+    body {
+      background: #f8feff;
+      font-family: Arial, sans-serif;
+      color: #1565c0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .btn-sintoma {
+      padding: 16px;
+      background: #0288d1;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px #0288d155;
+    }
+
+    .btn-sintoma:hover {
+      background: #1565c0;
+    }
+
+    /* POPUP */
+    .popup {
+      display: none; 
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0004;
+      text-align: center;
+    }
+
+    .popup-content img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #0288d1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-voltar {
+      margin: 30px auto;
+      padding: 12px 34px;
+      border-radius: 8px;
+      border: none;
+      background: #ffeb3b;
+      color: #0288d1;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #fffde777;
+      display: block;
+    }
+
+    .btn-voltar:hover {
+      background: #fffde7;
+      color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Sintomas da Gripe</h2>
+
+  <div class="grid-container">
+    <button class="btn-sintoma" onclick="abrirPopup('tosse.jpg')">Tosse seca</button>
+    <button class="btn-sintoma" onclick="abrirPopup('febre.jpg')">Febre alta</button>
+    <button class="btn-sintoma" onclick="abrirPopup('dor_garganta.jpg')">Dor de garganta</button>
+    <button class="btn-sintoma" onclick="abrirPopup('dor_cabeca.jpg')">Dor de cabeça</button>
+    <button class="btn-sintoma" onclick="abrirPopup('coriza.jpg')">Coriza</button>
+    <button class="btn-sintoma" onclick="abrirPopup('mal_estara.jpg')">Mal-estar intenso</button>
+  </div>
+
+  <button class="btn-voltar" onclick="location.href='index.html'">← Voltar ao início</button>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <img id="popup-img" src="" alt="Imagem do sintoma">
+      <br>
+      <button class="close-btn" onclick="fecharPopup()">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirPopup(imgSrc) {
+      document.getElementById("popup-img").src = imgSrc;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
